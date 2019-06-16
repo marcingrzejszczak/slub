@@ -1,10 +1,12 @@
 package wojciechowska.grzejszczak.slub
 
+import groovy.transform.Canonical
+import groovy.transform.CompileStatic
 
-import static wojciechowska.grzejszczak.slub.Goście.lepiej_przynieść_karmę_lub_żwirek_dla_zwierzaków_z_mińska
-
+@CompileStatic
 class Ślub {
 
+	@CompileStatic
 	static void main(String[] args) {
 		def małgorzata = new Narzeczona()
 		def marcin = new Narzeczony()
@@ -19,12 +21,13 @@ class Ślub {
 		def małżeństwo = narzeczeni.biorą ślub
 		małżeństwo.zawarte()
 		if (new Goście().chcą_dać_kwiaty()) {
-			lepiej_przynieść_karmę_lub_żwirek_dla_zwierzaków_z_mińska()
+			Goście.lepiej_przynieście_karmę_lub_żwirek_dla_zwierzaków_z_mińska()
 		}
 	}
 
 }
 
+@CompileStatic
 class Narzeczony {
 
 	@Override String toString() {
@@ -32,10 +35,11 @@ class Narzeczony {
 	}
 }
 
+@CompileStatic
 class Narzeczona {
 
 	Narzeczeni plus(Narzeczony narzeczony) {
-		return new Narzeczeni()
+		return new Narzeczeni(this, narzeczony)
 	}
 
 	@Override String toString() {
@@ -43,13 +47,19 @@ class Narzeczona {
 	}
 }
 
+@Canonical
 class Narzeczeni {
+
+	final Narzeczona narzeczona
+	final Narzeczony narzeczony
+
 	Małżeństwo biorą(Map daneŚlubu) {
 		println "\nNa ślub \n${daneŚlubu.entrySet().join("\n")}"
 		return new Małżeństwo()
 	}
 }
 
+@CompileStatic
 class Małżeństwo {
 	void zawarte() {
 		print "\nI jako małżeństwo "
@@ -57,19 +67,21 @@ class Małżeństwo {
 	}
 }
 
+@CompileStatic
 class ZdarzenieMiłości {
 	ZdarzenieMiłości(String skutek) {
 		print skutek
 	}
 }
 
+@CompileStatic
 class Goście {
 	boolean chcą_dać_kwiaty() {
 		print "\n\nJeśli chcesz przynieść kwiaty,"
 		return true
 	}
 
-	static void lepiej_przynieść_karmę_lub_żwirek_dla_zwierzaków_z_mińska() {
+	static void lepiej_przynieście_karmę_lub_żwirek_dla_zwierzaków_z_mińska() {
 		print " lepiej przynieść karmę lub żwirek dla 'Zwierzaków z Mińska', które są cześcią Fundacji Międzynarodowego Ruchu na Rzecz Zwierząt - Viva!"
 	}
 }
