@@ -1,9 +1,12 @@
 package wojciechowska.grzejszczak.slub
 
+
+import static wojciechowska.grzejszczak.slub.Goście.lepiej_przynieść_karmę_lub_żwirek_dla_zwierzaków_z_mińska
+
 class Ślub {
 
 	static void main(String[] args) {
-		def gosia = new Narzeczona()
+		def małgorzata = new Narzeczona()
 		def marcin = new Narzeczony()
 		def ślub = [
 				gdzie: "Urząd Stanu Cywilnego Warszawa Białołęka",
@@ -11,12 +14,12 @@ class Ślub {
 				data : "2019-09-21",
 				czas : "14:00"
 		]
-		def narzeczeni = gosia + marcin
-		println "Narzeczeni $gosia i $marcin serdecznie zapraszają"
+		def narzeczeni = małgorzata + marcin
+		println "Narzeczeni $małgorzata i $marcin serdecznie zapraszają"
 		def małżeństwo = narzeczeni.biorą ślub
 		małżeństwo.zawarte()
-		if (new Goście().chcąDaćKwiaty()) {
-
+		if (new Goście().chcą_dać_kwiaty()) {
+			lepiej_przynieść_karmę_lub_żwirek_dla_zwierzaków_z_mińska()
 		}
 	}
 
@@ -24,9 +27,8 @@ class Ślub {
 
 class Narzeczony {
 
-	@Override
-	String toString() {
-		return "Marcin"
+	@Override String toString() {
+		return "Marcin Grzejszczak"
 	}
 }
 
@@ -36,34 +38,38 @@ class Narzeczona {
 		return new Narzeczeni()
 	}
 
-	@Override
-	String toString() {
-		return "Gosia"
+	@Override String toString() {
+		return "Małgorzata Wojciechowska"
 	}
 }
 
 class Narzeczeni {
 	Małżeństwo biorą(Map daneŚlubu) {
-		println "Na ślub $daneŚlubu"
+		println "\nNa ślub \n${daneŚlubu.entrySet().join("\n")}"
 		return new Małżeństwo()
 	}
 }
 
 class Małżeństwo {
 	void zawarte() {
-		println "I jako małżeństwo"
-		new ZdarzenieMiłości("Żyli długo i szczęśliwie")
+		print "\nI jako małżeństwo "
+		new ZdarzenieMiłości("będą żyli długo i szczęśliwie!")
 	}
 }
 
 class ZdarzenieMiłości {
 	ZdarzenieMiłości(String skutek) {
-		println skutek
+		print skutek
 	}
 }
 
 class Goście {
-	boolean chcąDaćKwiaty() {
+	boolean chcą_dać_kwiaty() {
+		print "\n\nJeśli chcesz przynieść kwiaty,"
 		return true
+	}
+
+	static void lepiej_przynieść_karmę_lub_żwirek_dla_zwierzaków_z_mińska() {
+		print " lepiej przynieść karmę lub żwirek dla 'Zwierzaków z Mińska', które są cześcią Fundacji Międzynarodowego Ruchu na Rzecz Zwierząt - Viva!"
 	}
 }
