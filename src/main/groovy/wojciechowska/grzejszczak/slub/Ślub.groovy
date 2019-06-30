@@ -3,10 +3,8 @@ package wojciechowska.grzejszczak.slub
 import groovy.transform.Canonical
 import groovy.transform.CompileStatic
 
-@CompileStatic
 class Ślub {
 
-	@CompileStatic
 	static void main(String[] args) {
 		def małgorzata = new Narzeczona()
 		def marcin = new Narzeczony()
