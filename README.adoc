@@ -1,0 +1,14 @@
+image::https://codecov.io/gh/marcingrzejszczak/slub/branch/{branch}/graph/badge.svg["codecov", link="https://codecov.io/gh/marcingrzejszczak/slub"]
+image::https://circleci.com/gh/marcingrzejszczak/slub.svg?style=svg["CircleCI", link="https://circleci.com/gh/marcingrzejszczak/slub"]
+
+= Ślub Application
+
+This application contains information on the Małgorzata Wojciechowska & Marcin Grzejszczak wedding.
+
+== Learn more
+
+Just run the `run.sh` script as follows to learn more:
+
+```bash
+$ ./run.sh
+```

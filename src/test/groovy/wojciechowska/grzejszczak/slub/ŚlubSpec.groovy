@@ -24,7 +24,7 @@ Narzeczeni Małgorzata Wojciechowska i Marcin Grzejszczak serdecznie zapraszają
 Na ślub 
 gdzie=Urząd Stanu Cywilnego Warszawa Białołęka
 adres=ul. Modlińska 197, 03-122, Warszawa
-data=2019-09-21
+data=21-09-2019
 czas=14:00
 
 I jako małżeństwo będą żyli długo i szczęśliwie!
