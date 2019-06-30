@@ -74,6 +74,7 @@ class ZdarzenieMiłości {
 
 @CompileStatic
 class Goście {
+	
 	boolean chcą_dać_kwiaty() {
 		print "\n\nJeśli chcesz przynieść kwiaty,"
 		return true
