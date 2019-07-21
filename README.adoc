@@ -1,11 +1,27 @@
 image::https://codecov.io/gh/marcingrzejszczak/slub/branch/{branch}/graph/badge.svg["codecov", link="https://codecov.io/gh/marcingrzejszczak/slub"]
 image::https://circleci.com/gh/marcingrzejszczak/slub.svg?style=svg["CircleCI", link="https://circleci.com/gh/marcingrzejszczak/slub"]
 
-= Ślub Application
+= Aplikacja Ślub
+
+Aplikacja ta zawiera informacje o ślubie Małgorzaty Wojciechowskiej oraz Marcin Grzejszczaka.
+
+== Po prostu odpal
+
+Upewnij się, że masz zainstalowaną Javę. Jeśli nie masz pewności czy masz ją zainstalowaną kliknij https://java.com/pl/download/[tutaj] i ją pobierz i zainstaluj.
+
+== Skompiluj i odpal
+
+Odpal skrypt `run.sh` i dowiedz się wiecej:
+
+```bash
+$ ./run.sh
+```
+
+= Ślub Application (en)
 
 This application contains information on the Małgorzata Wojciechowska & Marcin Grzejszczak wedding.
 
-== Learn more
+== Compile and run
 
 Just run the `run.sh` script as follows to learn more:
 
