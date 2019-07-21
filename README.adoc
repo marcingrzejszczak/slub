@@ -3,7 +3,7 @@ image::https://circleci.com/gh/marcingrzejszczak/slub.svg?style=svg["CircleCI", 
 
 = Aplikacja Ślub
 
-Aplikacja ta zawiera informacje o ślubie Małgorzaty Wojciechowskiej oraz Marcin Grzejszczaka.
+Aplikacja ta zawiera informacje o ślubie Małgorzaty Wojciechowskiej oraz Marcina Grzejszczaka.
 
 == Po prostu odpal
 
