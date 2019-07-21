@@ -7,11 +7,55 @@ Aplikacja ta zawiera informacje o ślubie Małgorzaty Wojciechowskiej oraz Marci
 
 == Po prostu odpal
 
+=== Windows
+
 Upewnij się, że masz zainstalowaną Javę. Jeśli nie masz pewności czy masz ją zainstalowaną kliknij https://java.com/pl/download/[tutaj] i ją pobierz i zainstaluj.
+
+Jeśli masz Windowsa, odpal terminal (wciśnij `start`, napisz `cmd` i wciśnij `enter`).
+
+Następnie wpisz poniższą komendę, żeby ściągnąć aplikację do pliku `slub.jar`.
+
+```bash
+certutil.exe -urlcache -split -f "https://github.com/marcingrzejszczak/slub/raw/master/bin/slub.jar" slub.jar
+```
+
+Żeby odpalić aplikację napisz:
+
+```bash
+java -jar slub.jar
+```
+
+Na ekranie powinny wpisać się informacje o ślubie :)
+
+=== Linux
+
+Jeśli masz Linuxa, odpal terminal.
+
+Następnie wpisz poniższą komendę, żeby ściągnąć aplikację do pliku `slub.jar`.
+
+```bash
+wget "https://github.com/marcingrzejszczak/slub/raw/master/bin/slub.jar"
+```
+
+Musisz mieć Javę zainstalowaną, żeby odpalić aplikację. Odpal poniższą komendę, żeby zainstalować Javę jeśli jej nie masz.
+
+```bash
+curl -s https://get.sdkman.io | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+yes | sdk install java
+```
+
+Żeby odpalić aplikację napisz:
+
+```bash
+java -jar slub.jar
+```
+
+Na ekranie powinny wpisać się informacje o ślubie :)
 
 == Skompiluj i odpal
 
-Odpal skrypt `run.sh` i dowiedz się wiecej:
+Żeby skompilować kod i odpalić aplikację, odpal skrypt `run.sh` i dowiedz się wiecej:
 
 ```bash
 $ ./run.sh
@@ -21,9 +65,57 @@ $ ./run.sh
 
 This application contains information on the Małgorzata Wojciechowska & Marcin Grzejszczak wedding.
 
+== Just run it!
+
+=== Windows
+
+Please ensure that you have Java installed. If you're not sure go to https://java.com/download/[java website] download and install it.
+
+If you're on Windows, open the terminal (press `start`, type `cmd` and press `enter`).
+
+Next, type in the following command to fetch the application and store it to the `slub.jar` file.
+
+```bash
+certutil.exe -urlcache -split -f "https://github.com/marcingrzejszczak/slub/raw/master/bin/slub.jar" slub.jar
+```
+
+In order to run the application type in:
+
+```bash
+java -jar slub.jar
+```
+
+On the screen you should see the wedding information printed out :)
+
+=== Linux
+
+If you're on Linux, open the terminal.
+
+Next, type in the command to fetch the application and store the file to a file called `slub.jar`.
+
+```bash
+wget "https://github.com/marcingrzejszczak/slub/raw/master/bin/slub.jar"
+```
+
+You need to have Java installed to run the application. Please execute the following command to run Java if you don't have it:
+
+```bash
+curl -s https://get.sdkman.io | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+yes | sdk install java
+```
+
+In order to run the application execute the command:
+
+```bash
+java -jar slub.jar
+```
+
+Then, on the screen you should see all the information about our wedding :)
+
 == Compile and run
 
-Just run the `run.sh` script as follows to learn more:
+In order to compile and run the code, just run the `run.sh` script as follows to learn more:
 
 ```bash
 $ ./run.sh
