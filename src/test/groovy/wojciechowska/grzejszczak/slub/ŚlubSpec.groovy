@@ -2,6 +2,8 @@ package wojciechowska.grzejszczak.slub
 
 import spock.lang.Specification
 
+import static org.assertj.core.api.Assertions.assertThat
+
 class ŚlubSpec extends Specification {
 	ByteArrayOutputStream outContent = new ByteArrayOutputStream()
 	PrintStream originalOut = System.out
@@ -18,7 +20,7 @@ class ŚlubSpec extends Specification {
 		when:
 			Ślub.main()
 		then:
-			"""\
+		assertThat("""\
 Narzeczeni Małgorzata Wojciechowska i Marcin Grzejszczak serdecznie zapraszają
 
 Na ślub 
@@ -30,6 +32,6 @@ czas=14:00
 I jako małżeństwo będą żyli długo i szczęśliwie!
 
 Jeśli chcesz przynieść kwiaty, lepiej przynieść karmę lub żwirek dla 'Zwierzaków z Mińska', które są cześcią Fundacji Międzynarodowego Ruchu na Rzecz Zwierząt - Viva!
-""".trim() == outContent.toString()
+""").isEqualToNormalizingWhitespace(outContent.toString())
 	}
 }

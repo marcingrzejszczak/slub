@@ -10,7 +10,7 @@
 
 	<properties>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -26,6 +26,12 @@
 			<groupId>org.spockframework</groupId>
 			<artifactId>spock-core</artifactId>
 			<version>1.2-groovy-2.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.12.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -65,37 +71,20 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.1.4.RELEASE</version>
+				<configuration>
+					<fork>true</fork>
+					<mainClass>wojciechowska.grzejszczak.slub.Ślub</mainClass>
+				</configuration>
 				<executions>
 					<execution>
-						<id>copy-dependencies</id>
-						<phase>prepare-package</phase>
 						<goals>
-							<goal>copy-dependencies</goal>
+							<goal>repackage</goal>
 						</goals>
-						<configuration>
-							<outputDirectory>
-								${project.build.directory}/libs
-							</outputDirectory>
-						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>libs/</classpathPrefix>
-							<mainClass>
-								wojciechowska.grzejszczak.slub.Ślub
-							</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.gmavenplus</groupId>
